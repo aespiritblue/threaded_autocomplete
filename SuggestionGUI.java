@@ -92,11 +92,16 @@ public class SuggestionGUI extends JFrame
 	Test that the code still runs and compiles
 	after this. You should notice no changes
 	at this point. */
+
+	private final JTextArea textAreaOne;
+	private final JTextArea textAreaTwo;
+	private final JTextArea textAreaThree;
 	
 	
 	// set up GUI
 	public SuggestionGUI()
 	{
+		
 		super("Autocomplete from novels");
 		
 		setLayout(null);
@@ -123,6 +128,11 @@ public class SuggestionGUI extends JFrame
 			setBounds(10,520,800,200);
 		Run and test your code. You should notice
 		three new text areas on the GUI. */
+
+		textAreaOne = new JTextArea();
+		
+		textAreaTwo = new JTextArea();
+		textAreaThree = new JTextArea();
 		
 		setSize(840, 840); // set size of window
 		setVisible(true);  // show window
