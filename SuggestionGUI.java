@@ -129,11 +129,19 @@ public class SuggestionGUI extends JFrame
 		Run and test your code. You should notice
 		three new text areas on the GUI. */
 
-		textAreaOne = new JTextArea();
-		
-		textAreaTwo = new JTextArea();
-		textAreaThree = new JTextArea();
-		
+		//adds three new JTextAreas
+		textAreaOne = new JTextArea(10,80);
+		textAreaOne.setBounds(10,80,800,200);
+		add(textAreaOne);
+
+		textAreaTwo = new JTextArea(10,80);
+		textAreaTwo.setBounds(10,300,800,200);
+		add(textAreaTwo);
+
+		textAreaThree = new JTextArea(10,20);
+		textAreaThree.setBounds(10,520,800,200);		
+		add(textAreaThree);
+
 		setSize(840, 840); // set size of window
 		setVisible(true);  // show window
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -151,6 +159,10 @@ public class SuggestionGUI extends JFrame
 		Run and test your code. You should notice
 		no new features at this point. */
 		
+		ThreadedAutocomplete threadedOne = new ThreadedAutocomplete("Frankenstein.txt", enterField, textAreaOne);
+		ThreadedAutocomplete threadedTwo = new ThreadedAutocomplete("MobyDick.txt", enterField, textAreaTwo);
+		ThreadedAutocomplete threadedThree = new ThreadedAutocomplete("GreatExpectations.txt", enterField, textAreaThree);
+
 		
 		/* TODO: Write code to start all three
 		threads running concurrently.
@@ -159,6 +171,10 @@ public class SuggestionGUI extends JFrame
 		the three text areas (unless there is no
 		match in the novel with the most recent
 		word). */
+
+		threadedOne.start();
+		threadedTwo.start();
+		threadedThree.start();
 		
 	}
 }
